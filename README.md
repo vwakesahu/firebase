@@ -105,7 +105,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 24. getFirestore -fb/firestore
 25. getStorage -fb/storage
 26. add in config:
-    const app = getApp.length > 0? getApp() : initializeApp(firebaseConfig)
+    const app = getApps.length > 0? getApp() : initializeApp(firebaseConfig)
     const firestore = getFirestore(app)
     const storage - getStorage(app)
     export {};
