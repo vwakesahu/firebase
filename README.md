@@ -69,4 +69,49 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-##Reducer Tutorial:
+## Reducer Tutorial:
+
+1.  src/context/StateProvider.js
+2.  src/context/initialState.js
+3.  src/context/reducer.js
+4.  in initialState
+5.  exp ins={user:null}
+6.  in SP:
+    imp react {createCont, useCont, useReducer}
+
+    exp con StateContext = createContext()
+    exp con StateProvider = ({reducer, initialState, children})=>(
+    <StateContext.Provider value={ useReducer(reducer, initialState)}>
+    {children}
+    </StateContext.Provider>
+    )
+    exp con useStateValue = () => useContext(SateContext)
+
+7.  in reducer:
+    exp con actionType = {
+    SET_USER: 'SET_USER
+    }
+    const reducer = (state, action) => {
+    console.log(action)
+
+        switch(action.type){
+            case actionType.SET_USER:
+                return {
+                    ...state,
+                    user : action,user,
+                };
+            default:
+                return state;
+        }
+
+    }
+    exp de reducer;
+
+8.  in button,
+    response= {user: {refreshToken, providerData}}=awit .............
+9.  same but top
+    const [{user}, dispatch] = useStateValue()
+10. in login(){
+    dispatch({type:actionType.SET_USER,
+    user:providerData[0]})
+    }
