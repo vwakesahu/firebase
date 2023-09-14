@@ -23,6 +23,9 @@ function App() {
     <div className="App">
       <p>Demo</p>
       <button onClick={login}>Click Me</button>
+      {
+        user && <img src={user.photoURL}></img>
+      }
     </div>
   );
 }
