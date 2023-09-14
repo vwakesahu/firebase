@@ -18,14 +18,13 @@ function App() {
     // console.log(response);
 
     dispatch({ type: actionType.SET_USER, user: providerData[0] });
+    localStorage.setItem("user", JSON.stringify(providerData[0]));
   };
   return (
     <div className="App">
       <p>Demo</p>
       <button onClick={login}>Click Me</button>
-      {
-        user && <img src={user.photoURL}></img>
-      }
+      {user && <img src={user.photoURL}></img>}
     </div>
   );
 }
